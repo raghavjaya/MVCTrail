@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MVCTrail.Models.Department>
+@using MVCTrail.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2><u>Departments</u></h2>
+<table>
+    @foreach (Department objDept in @Model)
+    {
+        <tr>
+            <td> @Html.ActionLink(objDept.Name,"Index", "Employee", new { DepartmentId = objDept.DepartmentId }, null) </td>
+        </tr>
+    }
+</table>
